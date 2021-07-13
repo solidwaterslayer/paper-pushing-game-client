@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { TransactionManagerService } from './services/transaction.service';
+import { LevelService } from './services/level.service';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +8,18 @@ import { TransactionManagerService } from './services/transaction.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  transaction: any = "hello world";
-  constructor(protected transactionManagerService: TransactionManagerService) { }
+  level: any = "hello world";
+  constructor(protected levelService: LevelService) { }
 
   ngOnInit() {
-    this.getTransaction();
+    this.getLevel();
   }
 
-  getTransaction(): void {
-    this.transactionManagerService.getTransaction().subscribe(
-      (transaction: any) => {
-        console.log(transaction);
-        this.transaction = transaction;
+  getLevel(): void {
+    this.levelService.getLevel().subscribe(
+      (level: any) => {
+        console.log(level);
+        this.level = level;
       },
       (httpErrorResponse: HttpErrorResponse) => {
         console.log(httpErrorResponse.message);
