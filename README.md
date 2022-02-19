@@ -37,34 +37,27 @@
 
 > ---
 >
-> # Installation :thinking:
-> 
-> Client Code:
-> 
-> https://github.com/solidwaterslayer/paper-pushing-game-client
-> 
-> Server Code:
-> 
-> https://github.com/solidwaterslayer/paper-pushing-game-server
-> <br>
-> <br>
 > # Run Your Own Instance :sleepy:
 > 
 > How to run the client:
 > 
-> 1. Download ```Node.js```
-> 2. Follow directions: https://angular.io/guide/deployment
+> 1. Download the project client: https://github.com/solidwaterslayer/paper-pushing-game-client
+> 2. Download ```Node.js```
+> 3. Navigate to the project directory :smile:
+> 4. Type ```npm install -g @angular/cli```. You can do ```npm uninstall -g @angular/cli``` afterwards. :mask: This is just so angular commands work.
+> 5. Type ```npm install```
+> 6. Type ```npm start``` :sob:
+> 7. To deploy online, follow these wonderful instructions: https://angular.io/guide/deployment
 > 
 > How to run the server :mask::
 > 
-> 1. Download a ```JDK``` [I used Java 11]
-> 2. Get an ```IDE``` and connect the ```JDK``` to it.
-> 3. You can run the applications or the tests.
-> 3. To deploy, follow instructions here: https://dashboard.heroku.com/apps/
+> 1. Download the project server: https://github.com/solidwaterslayer/paper-pushing-game-server
+> 2. Download a ```JDK``` [I used Java 11]
+> 3. Get an ```IDE``` and connect the ```JDK``` to it.
+> 4. You can run the applications or the tests.
+> 5. To deploy, follow instructions here: https://dashboard.heroku.com/apps/
 > 
-> Here is a running instance of the server:
->
-> https://paper-pushing-game-server.herokuapp.com/
+> Here is a running instance of the server: https://paper-pushing-game-server.herokuapp.com/
 > <br>
 > <br>
 > # Code Coverage :sparkling_heart: :sparkling_heart:
