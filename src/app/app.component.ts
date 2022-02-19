@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { LevelService } from './services/level.service';
+import { LevelService } from './level.service';
 
 @Component({
   selector: 'app-root',
