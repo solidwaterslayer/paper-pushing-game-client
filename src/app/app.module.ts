@@ -9,4 +9,4 @@ import { AppComponent } from './app.component';
   declarations: [AppComponent],
   imports: [BrowserModule, HttpClientModule]
 })
-export class AppModule { }
+export class AppModule {}

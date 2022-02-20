@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LevelService } from './level.service';
 
 @Component({
@@ -7,23 +7,13 @@ import { LevelService } from './level.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  level: any = "hello world";
-  constructor(protected levelService: LevelService) { }
+export class AppComponent {
+  public level: any
 
-  ngOnInit() {
-    this.getLevel();
-  }
-
-  getLevel(): void {
+  public constructor(private levelService: LevelService) {
     this.levelService.getLevel().subscribe(
-      (level: any) => {
-        console.log(level);
-        this.level = level;
-      },
-      (httpErrorResponse: HttpErrorResponse) => {
-        console.log(httpErrorResponse.message);
-      }
+      (level: any) => { this.level = level },
+      (httpErrorResponse: HttpErrorResponse) => { console.log(httpErrorResponse.message) }
     )
   }
 }
