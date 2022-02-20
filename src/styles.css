@@ -1,1 +1,35 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+.flip {
+    height: 600px;
+    perspective: 1000px;
+    width: 400px;
+}
+
+.flip:hover .inside {
+    transform: rotateY(180deg);
+}
+
+.inside {
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 1s ease-in-out;
+    width: 100%;
+}
+
+.inside figure {
+    backface-visibility: hidden;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+}
+
+.front {
+    background-color: aliceblue;
+}
+
+.back {
+    background-color: antiquewhite;
+    transform: rotateY(180deg);
+}

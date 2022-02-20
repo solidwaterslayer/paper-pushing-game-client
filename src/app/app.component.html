@@ -1,5 +1,14 @@
-<div *ngIf="level else loading">
-    <pre>{{ level | json }}</pre>
+<div class="d-flex justify-content-around align-items-center pt-5" *ngIf="level else loading">
+    <div class="flip">
+        <div class="inside">
+            <figure class="front">
+                <pre>{{ level.order | json }}</pre>
+            </figure>
+            <figure class="back">
+                <pre>{{ level.receipt | json }}</pre>
+            </figure>
+        </div>
+    </div>
 </div>
 
 <ng-template #loading>
