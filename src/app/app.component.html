@@ -1,12 +1,34 @@
-<div class="d-flex justify-content-around align-items-center pt-5" *ngIf="level else loading">
-    <div class="flip">
+<div class="d-flex justify-content-center pt-3" *ngIf="level else loading">
+    <div class="flip m-5">
         <div class="inside">
             <figure class="front">
-                <pre>{{ level.order | json }}</pre>
+                <div class="card bg-light" style="height: 100%">
+                    <div class="card-body">
+                        <h4 class="card-title py-3">Order</h4>
+                        <div class="list-group">
+                            <button class="list-group-item list-group-item-action" *ngFor="let transaction of level.order">{{ transaction }}</button>
+                        </div>
+                    </div>
+                </div>
             </figure>
             <figure class="back">
-                <pre>{{ level.receipt | json }}</pre>
+                <div class="card bg-secondary text-warning" style="height: 100%">
+                    <div class="card-body">
+                        <h4 class="card-title py-3">Rules</h4>
+                        <p>unknown...</p>
+                    </div>
+                </div>
             </figure>
+        </div>
+    </div>
+    <div class="flip m-5">
+        <div class="card bg-light" style="height: 100%">
+            <div class="card-body">
+                <h4 class="card-title py-3">Receipt</h4>
+                <div class="list-group">
+                    <button class="list-group-item list-group-item-action list-group-item-light" *ngFor="let transaction of level.receipt; index as i" [ngClass]="{ 'text-warning': i == 2 }">{{ transaction || '-' }}</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
