@@ -16,7 +16,7 @@ export class AppComponent {
       (level: any) => { this.level = level },
       (httpErrorResponse: HttpErrorResponse) => { console.log(httpErrorResponse.message) }
     )
-    this.answer = [0, 4]
+    this.answer = []
   }
 
   public addAnswer(answer: number) {

@@ -12,7 +12,7 @@
                 </div>
             </figure>
             <figure class="back">
-                <div class="card bg-secondary text-warning" style="height: 100%">
+                <div class="card bg-secondary text-info" style="height: 100%">
                     <div class="card-body">
                         <h4 class="card-title py-3">Rules</h4>
                         <p>unknown...</p>
@@ -27,11 +27,11 @@
                 <h4 class="card-title py-3">Receipt</h4>
                 <div class="list-group">
                     <button
-                    class="list-group-item list-group-item-action list-group-item-light"
-                    *ngFor="let transaction of level.receipt; index as i"
-                    [ngClass]="{ 'text-warning': answer.includes(i) }"
-                    (click)="addAnswer(i)"
-                    >{{ transaction || '-' }}</button>
+                        class="list-group-item list-group-item-action"
+                        *ngFor="let transaction of level.receipt; index as i"
+                        [ngClass]="{ 'list-group-item-secondary text-info': answer.includes(i) }"
+                        (click)="addAnswer(i)"
+                    >{{ transaction || '---' }}</button>
                 </div>
             </div>
         </div>
