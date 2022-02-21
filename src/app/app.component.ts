@@ -9,14 +9,19 @@ import { LevelService } from './level.service';
 })
 export class AppComponent {
   public level: any
-  public answer: number[]
+  public answer!: number[];
 
-  public constructor(private levelService: LevelService) {
+  public constructor(private levelService: LevelService) { this.getLevel() }
+
+  private getLevel() {
     this.levelService.getLevel().subscribe(
-      (level: any) => { this.level = level },
+      (level: any) => {
+        this.level = level
+        this.answer = []
+        if (level.receipt.length > 10) { this.getLevel() } // TODO remove me
+      },
       (httpErrorResponse: HttpErrorResponse) => { console.log(httpErrorResponse.message) }
     )
-    this.answer = []
   }
 
   public addAnswer(answer: number) {
@@ -26,4 +31,6 @@ export class AppComponent {
 
     this.answer = this.answer.slice(this.answer.length - 2, this.answer.length)
   }
+
+  public submit() {}
 }
