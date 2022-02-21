@@ -26,7 +26,12 @@
             <div class="card-body">
                 <h4 class="card-title py-3">Receipt</h4>
                 <div class="list-group">
-                    <button class="list-group-item list-group-item-action list-group-item-light" *ngFor="let transaction of level.receipt; index as i" [ngClass]="{ 'text-warning': i == 2 }">{{ transaction || '-' }}</button>
+                    <button
+                    class="list-group-item list-group-item-action list-group-item-light"
+                    *ngFor="let transaction of level.receipt; index as i"
+                    [ngClass]="{ 'text-warning': answer.includes(i) }"
+                    (click)="addAnswer(i)"
+                    >{{ transaction || '-' }}</button>
                 </div>
             </div>
         </div>
