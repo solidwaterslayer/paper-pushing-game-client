@@ -9,7 +9,8 @@ import { LevelService } from './level.service';
 })
 export class AppComponent {
   public level: any
-  public answer!: number[];
+  public answer!: number[]
+  public display!: string
 
   public constructor(private levelService: LevelService) { this.getLevel() }
 
@@ -32,5 +33,7 @@ export class AppComponent {
     this.answer = this.answer.slice(this.answer.length - 2, this.answer.length)
   }
 
-  public submit() {}
+  public submit() { this.display = 'block' }
+
+  public ok() { this.display = 'none' }
 }

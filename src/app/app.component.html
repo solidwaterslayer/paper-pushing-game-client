@@ -39,6 +39,22 @@
     </div>
 </div>
 
+<div class="modal" [ngStyle]="{ 'display': display }">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">title</h4>
+            </div>
+            <div class="modal-body">
+                <p>paragraph</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-danger" (click)="ok()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <ng-template #loading>
     <div class="text-center pt-5">
         <div class="spinner-grow text-success mt-5" style="height: 300px; width: 300px;"></div>
