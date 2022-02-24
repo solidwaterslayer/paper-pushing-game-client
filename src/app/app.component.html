@@ -31,7 +31,10 @@
                         *ngFor="let transaction of level.receipt; index as i"
                         [ngClass]="{ 'list-group-item-secondary text-info': answer.includes(i) }"
                         (click)="addAnswer(i)"
-                    >{{ transaction || '---' }}</button>
+                    >
+                        {{ transaction || '---' }}<!-- TODO remove me -->
+                        <span class="badge bg-primary rounded-pill position-absolute end-0 mx-2">{{ i }}</span>
+                    </button>
                 </div>
                 <button class="btn btn-outline-info position-absolute bottom-0 end-0 m-3" (click)="submit()">Submit</button>
             </div>
@@ -40,13 +43,10 @@
 </div>
 
 <div class="modal" [ngStyle]="{ 'display': display }">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">title</h4>
-            </div>
             <div class="modal-body">
-                <p>paragraph</p>
+                <p>{{ level.transformation }}</p>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-outline-danger" (click)="ok()">OK</button>

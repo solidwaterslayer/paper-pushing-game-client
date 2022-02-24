@@ -33,7 +33,12 @@ export class AppComponent {
     this.answer = this.answer.slice(this.answer.length - 2, this.answer.length)
   }
 
-  public submit() { this.display = 'block' }
+  public submit() {
+    this.display = 'block'
+  }
 
-  public ok() { this.display = 'none' }
+  public ok() {
+    this.display = 'none'
+    this.getLevel()
+  }
 }
