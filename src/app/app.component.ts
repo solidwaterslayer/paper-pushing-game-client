@@ -9,8 +9,11 @@ import { LevelService } from './level.service';
 })
 export class AppComponent {
   public level: any
-  public answer!: number[]
+  public answers!: number[]
+
   public display!: string
+  public accuracy!: number
+  public solutions!: any[][]
 
   public constructor(private levelService: LevelService) { this.getLevel() }
 
@@ -18,7 +21,7 @@ export class AppComponent {
     this.levelService.getLevel().subscribe(
       (level: any) => {
         this.level = level
-        this.answer = []
+        this.answers = []
         if (level.receipt.length > 10) { this.getLevel() } // TODO remove me
       },
       (httpErrorResponse: HttpErrorResponse) => { console.log(httpErrorResponse.message) }
@@ -26,15 +29,25 @@ export class AppComponent {
   }
 
   public addAnswer(answer: number) {
-    if (!this.answer.includes(answer)) {
-      this.answer.push(answer)
+    if (!this.answers.includes(answer)) {
+      this.answers.push(answer)
     }
 
-    this.answer = this.answer.slice(this.answer.length - 2, this.answer.length)
+    this.answers = this.answers.slice(this.answers.length - 2, this.answers.length)
   }
 
   public submit() {
     this.display = 'block'
+    this.accuracy = 0
+    this.solutions = []
+    for (let i = 0; i < this.level.transformation.length; i++) {
+      if (isNaN(parseInt(this.level.transformation[i]))) {
+        if (this.answers.includes(i)) {
+          this.accuracy += 50
+        }
+        this.solutions.push([i, this.level.transformation[i]])
+      }
+    }
   }
 
   public ok() {

@@ -29,7 +29,7 @@
                     <button
                         class="list-group-item list-group-item-action"
                         *ngFor="let transaction of level.receipt; index as i"
-                        [ngClass]="{ 'list-group-item-secondary text-info': answer.includes(i) }"
+                        [ngClass]="{ 'list-group-item-secondary text-info': answers.includes(i) }"
                         (click)="addAnswer(i)"
                     >
                         {{ transaction || '---' }}<!-- TODO remove me -->
@@ -43,10 +43,20 @@
 </div>
 
 <div class="modal" [ngStyle]="{ 'display': display }">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog" style="width: 160px;">
         <div class="modal-content">
+            <div class="modal-header">{{ accuracy }}% Accuracy</div>
             <div class="modal-body">
-                <p>{{ level.transformation }}</p>
+                <div class="list-group">
+                    <button
+                        class="list-group-item list-group-item-action text-info"
+                        *ngFor="let solution of solutions"
+                        [ngClass]="answers.includes(solution[0]) ? 'list-group-item-success' : 'list-group-item-danger'"
+                    >
+                        {{ solution[1] }}
+                        <span class="badge bg-primary rounded-pill position-absolute end-0 mx-2">{{ solution[0] }}</span>
+                    </button>
+                </div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-outline-danger" (click)="ok()">OK</button>
