@@ -1,6 +1,6 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { LevelService } from './level.service';
+import { HttpErrorResponse } from '@angular/common/http'
+import { Component } from '@angular/core'
+import { LevelService } from './level.service'
 
 @Component({
   selector: 'app-root',
@@ -48,6 +48,7 @@ export class AppComponent {
         this.solutions.push([i, this.level.transformation[i]])
       }
     }
+    // alert(this.accuracy + '% Accuracy\n#' + this.solutions[0][0] + ' ' + this.solutions[0][1] + '\n#' + this.solutions[1][0] + ' ' + this.solutions[1][1])
   }
 
   public ok() {
