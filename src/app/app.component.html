@@ -42,8 +42,8 @@
     </div>
 </div>
 
-<div class="modal" [ngStyle]="{ 'display': display }">
-    <div class="modal-dialog" style="width: 160px;">
+<div class="modal" [ngStyle]="{ 'display': display }" cdkDrag>
+    <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">{{ accuracy }}% Accuracy</div>
             <div class="modal-body">
