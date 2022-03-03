@@ -48,7 +48,6 @@ export class AppComponent {
         this.solutions.push([i, this.level.transformation[i]])
       }
     }
-    // alert(this.accuracy + '% Accuracy\n#' + this.solutions[0][0] + ' ' + this.solutions[0][1] + '\n#' + this.solutions[1][0] + ' ' + this.solutions[1][1])
   }
 
   public ok() {
