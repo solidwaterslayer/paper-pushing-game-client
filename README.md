@@ -29,8 +29,11 @@
 > 
 > Here is a running instance of the project:
 > https://solidwaterslayer.github.io/paper-pushing-game-client/
-> This is similar to pushing papers irl.
+> 
+> This is similar to pushing papers IRL.
+> 
 > Given a ```order``` form and a ```receipt``` form, find the errors in the ```receipt``` form.
+> 
 > This is also similar to the game: ```Papers, Please``` :blush:
 > 
 > ---
