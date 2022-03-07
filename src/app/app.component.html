@@ -1,39 +1,42 @@
-<div class="d-flex justify-content-center pt-3" *ngIf="level else loading">
-    <div class="flip m-5">
-        <div class="inside">
-            <figure class="front">
-                <div class="card bg-light" style="height: 100%">
-                    <div class="card-body">
-                        <h4 class="card-title py-3">Order</h4>
-                        <div class="list-group">
-                            <button class="list-group-item list-group-item-action" *ngFor="let transaction of level.order">{{ transaction }}</button>
+<div class="row m-0 pt-5" *ngIf="level else loading">
+    <div class="col-md-2 col-sm-2"></div>
+    <div class="col-md-4 col-sm-12 mt-4">
+        <div class="flip mx-5">
+            <div class="inside">
+                <figure class="front">
+                    <div class="card bg-light" style="height: 100%">
+                        <div class="card-body">
+                            <h4 class="card-title py-3">Order</h4>
+                            <div class="list-group">
+                                <button class="list-group-item list-group-item-action" *ngFor="let transaction of level.order">{{ transaction }}</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </figure>
-            <figure class="back">
-                <div class="card bg-secondary text-info" style="height: 100%">
-                    <div class="card-body">
-                        <h4 class="card-title pt-3">Order Rules</h4>
-                        <p>The create transaction syntax is:</p>
-                        <p>create [account type] [id] [balance]</p>
-                        <p>Checking and savings accounts always start with $0.</p>
-                        <p>Time travel subtracts $100, per tick, from accounts with less than $900 inclusive.</p>
-                        <div class="text-light">
-                            <h4 class="card-title pt-3">Receipt Rules</h4>
-                            <p>Accounts are listed in creation order and are seperated by ---.</p>
-                            <p>Each account has a list of transactions underneath in execution order.</p>
+                </figure>
+                <figure class="back">
+                    <div class="card bg-secondary text-info" style="height: 100%">
+                        <div class="card-body">
+                            <h4 class="card-title pt-3">Order Rules</h4>
+                            <p>The create transaction syntax is:</p>
+                            <p>create [account type] [id] [balance]</p>
+                            <p>Checking and savings accounts always start with $0.</p>
+                            <p>Time travel subtracts $100, per tick, from accounts with less than $900 inclusive.</p>
+                            <div class="text-light">
+                                <h4 class="card-title pt-3">Receipt Rules</h4>
+                                <p>Accounts are listed in creation order and are seperated by ---.</p>
+                                <p>Each account has a list of transactions underneath in execution order.</p>
+                            </div>
+                            <h4 class="card-title pt-3">Mutation Rules</h4>
+                            <p>Typo: 1 character change.</p>
+                            <p>Move: A transaction is moved down by 1.</p>
                         </div>
-                        <h4 class="card-title pt-3">Mutation Rules</h4>
-                        <p>Typo: 1 character change.</p>
-                        <p>Move: A transaction is moved down by 1.</p>
                     </div>
-                </div>
-            </figure>
+                </figure>
+            </div>
         </div>
     </div>
-    <div class="flip m-5">
-        <div class="card bg-light" style="height: 100%">
+    <div class="col-md-6 col-sm-12 mt-4">
+        <div class="card mx-5 bg-light" style="height: 600px; width: 400px;">
             <div class="card-body">
                 <h4 class="card-title py-3">Receipt</h4>
                 <div class="list-group">

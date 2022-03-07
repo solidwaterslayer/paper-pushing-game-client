@@ -29,11 +29,14 @@ export class AppComponent {
   }
 
   public addAnswer(answer: number) {
-    if (!this.answers.includes(answer)) {
-      this.answers.push(answer)
+    if (this.display != 'block') {
+      if (this.answers.includes(answer)) {
+        this.answers = this.answers.filter(function(value) { return value != answer })
+      } else {
+        this.answers.push(answer)
+        this.answers = this.answers.slice(this.answers.length - 2, this.answers.length)
+      }
     }
-
-    this.answers = this.answers.slice(this.answers.length - 2, this.answers.length)
   }
 
   public submit() {
